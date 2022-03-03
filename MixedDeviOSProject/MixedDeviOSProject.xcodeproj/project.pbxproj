@@ -15,7 +15,23 @@
 		AFA96D0E27D0C0F8008C26C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA96D0D27D0C0F8008C26C0 /* Assets.xcassets */; };
 		AFA96D1127D0C0F8008C26C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA96D0F27D0C0F8008C26C0 /* LaunchScreen.storyboard */; };
 		AFA96D1427D0C0F8008C26C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA96D1327D0C0F8008C26C0 /* main.m */; };
+		AFA96D1C27D0C551008C26C0 /* App.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA96D1A27D0C4AA008C26C0 /* App.xcframework */; };
+		AFA96D1D27D0C551008C26C0 /* App.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AFA96D1A27D0C4AA008C26C0 /* App.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AFA96D1E27D0C551008C26C0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AFA96D1D27D0C551008C26C0 /* App.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		74A2131161AFB793607E544C /* Pods-MixedDeviOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MixedDeviOSProject.debug.xcconfig"; path = "Target Support Files/Pods-MixedDeviOSProject/Pods-MixedDeviOSProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -32,6 +48,7 @@
 		AFA96D1027D0C0F8008C26C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFA96D1227D0C0F8008C26C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFA96D1327D0C0F8008C26C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AFA96D1A27D0C4AA008C26C0 /* App.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = App.xcframework; path = mixed_dev_flutter_app/Debug/App.xcframework; sourceTree = "<group>"; };
 		B72B889A18DFF0131FFE2467 /* Pods_MixedDeviOSProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MixedDeviOSProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -41,6 +58,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				916C220C65F900C8C0712D7D /* Pods_MixedDeviOSProject.framework in Frameworks */,
+				AFA96D1C27D0C551008C26C0 /* App.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +68,7 @@
 		82E27A327EFB2F8884428394 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AFA96D1A27D0C4AA008C26C0 /* App.xcframework */,
 				B72B889A18DFF0131FFE2467 /* Pods_MixedDeviOSProject.framework */,
 			);
 			name = Frameworks;
@@ -61,7 +80,6 @@
 				74A2131161AFB793607E544C /* Pods-MixedDeviOSProject.debug.xcconfig */,
 				9588201BC557E822E9B2A4E3 /* Pods-MixedDeviOSProject.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -112,6 +130,8 @@
 				AFA96CFA27D0C0F4008C26C0 /* Sources */,
 				AFA96CFB27D0C0F4008C26C0 /* Frameworks */,
 				AFA96CFC27D0C0F4008C26C0 /* Resources */,
+				07FFCA7D3AC6A5B98376CDCE /* [CP] Embed Pods Frameworks */,
+				AFA96D1E27D0C551008C26C0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -168,6 +188,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		07FFCA7D3AC6A5B98376CDCE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MixedDeviOSProject/Pods-MixedDeviOSProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MixedDeviOSProject/Pods-MixedDeviOSProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MixedDeviOSProject/Pods-MixedDeviOSProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		460A3AB1CEA0FF80F3D7E904 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

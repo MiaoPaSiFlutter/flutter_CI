@@ -4,7 +4,8 @@
 target 'MixedDeviOSProject' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+  
+  pod 'Flutter', :podspec => 'mixed_dev_flutter_app/Debug/Flutter.podspec'
   # Pods for MixedDeviOSProject
 
 end
