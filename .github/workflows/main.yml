@@ -15,8 +15,8 @@ jobs:
       - name: Install git-lfs 处理大文件
         run: brew install git-lfs && git lfs install #进入本地仓库目录初始化 LFS
 
-      - name: 跟踪特定文件夹
-        run: git lfs track MixedDeviOSProject/mixed_dev_flutter_app/ && git add .gitattributes #进入本地仓库目录初始化 LFS
+      # - name: 跟踪特定文件夹
+      #   run: git lfs track MixedDeviOSProject/mixed_dev_flutter_app/ && git add .gitattributes #进入本地仓库目录初始化 LFS
 
       # 建立 Flutter 环境
       - name: Flutter action
