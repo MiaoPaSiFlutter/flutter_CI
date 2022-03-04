@@ -3,7 +3,7 @@ on:   [push] # 触发条件是push操作
 
 # 这个工作流程需要执行的任务
 jobs:
-  check:
+  process:
     name: Test on ${{ matrix.os }}
     # 运行在哪个平台（这里是MacOS）
     runs-on: macos-latest
