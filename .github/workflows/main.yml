@@ -18,9 +18,6 @@ jobs:
         with: # 这里的version和channel要跟Flutter工程师电脑上的Flutter环境保持一致（通过flutter doctor指令可以查看具体信息  ）
           channel: "stable"
           flutter-version: "2.5.1"
-
-      # 下载项目依赖
-      - run: flutter pub get
       
       # 执行测试
       - run: flutter test
