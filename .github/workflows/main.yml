@@ -1,24 +1,36 @@
 name: FlutterCI # CI名称
 on:   [push] # 触发条件是push操作
 
+# 这个工作流程需要执行的任务
 jobs:
   check:
     name: Test on ${{ matrix.os }}
     # 运行在哪个平台（这里是MacOS）
     runs-on: macos-latest
-
+    # 这个任务的步骤
     steps:
-      - uses: actions/checkout@v2 # 固定写法
-      # 第三方flutter的Action，它可以在服务器配置一个Flutter环境
-      - uses: subosito/flutter-action@v2
-        with:
-          # 这里的version和channel要跟Flutter工程师电脑上的Flutter环境保持一致（通过flutter doctor指令可以查看具体信息  ）
-          flutter-version: ‘2.5.1’
-          channel: ‘stable’
+      # 拉取项目代码
+      - uses: actions/checkout@v2
       
+      # 建立 Flutter 环境
+      - name: Flutter action
+        uses: subosito/flutter-action@v2 # 第三方flutter的Action，它可以在服务器配置一个Flutter环境
+        with: # 这里的version和channel要跟Flutter工程师电脑上的Flutter环境保持一致（通过flutter doctor指令可以查看具体信息  ）
+          channel: "stable"
+          flutter-version: "2.5.1"
+
+      # 下载项目依赖
+      - run: flutter pub get
+      
+      # 执行测试
+      - run: flutter test
+
+
       - run: flutter --version
+      
       # 想让我们CI做的事情！
       - run: cd mixed_dev_flutter_project && flutter build ios-framework —cocoapods —output=../MixedDeviOSProject/mixed_dev_flutter_app
+      
       - run: |
          git add .
          git commit -m ‘update flutter framework’
