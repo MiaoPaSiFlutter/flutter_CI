@@ -33,6 +33,7 @@ jobs:
 
       - name: Push changes
         uses: ad-m/github-push-action@master
+        timeout-minutes: 45
         with: 
           github_token: ${{ secrets.FLUTTER_CI_GITHUB_TOKEN }}
           branch: ${{ github.ref }}
