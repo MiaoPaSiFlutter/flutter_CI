@@ -12,6 +12,12 @@ jobs:
       # 拉取项目代码（这是一个官方提供的action，如需要使用项目仓库中代码用来构建、测试等的，使用checkout action可以自动拉取项目仓库的代码。）
       - uses: actions/checkout@v2
       
+      - name: Install git-lfs 处理大文件
+        run: brew install git-lfs && git lfs install #进入本地仓库目录初始化 LFS
+
+      - name: 跟踪特定文件夹
+        run: git lfs track MixedDeviOSProject/mixed_dev_flutter_app/ && git add .gitattributes #进入本地仓库目录初始化 LFS
+
       # 建立 Flutter 环境
       - name: Flutter action
         uses: subosito/flutter-action@v2 # 第三方flutter的Action，它可以在服务器配置一个Flutter环境
@@ -19,22 +25,20 @@ jobs:
           channel: "stable"
           flutter-version: "2.5.1"
             
-      # - name: Install Cocoapods
-      #   run: gem install cocoapods
+      
 
       # 想让我们CI做的事情！
       # - run: cd MixedDeviOSProject && touch sss.text #这个是可以提交成功的！！！
       - run: cd mixed_dev_flutter_project && flutter build ios-framework --output=../MixedDeviOSProject/mixed_dev_flutter_app
       
-       
+      
+
+
       - run: |
          git add .
          git commit -m "update flutter framework"
          
-
-      - name: 将本地 http.postBuffer 数值调整到GitHub服务对应的单次上传大小配置注意：我这里设置的是500MB（大家可以根据自己的需要设置）。http.postBuffer默认单位为B（字节），所以500MB=1024*1024*500。
-        run: |
-         git config --global http.postBuffer 524288000   
+      
 
       - name: Push changes
         uses: ad-m/github-push-action@master
