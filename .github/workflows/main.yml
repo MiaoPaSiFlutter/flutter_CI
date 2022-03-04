@@ -4,7 +4,7 @@ on:   [push] # 触发条件是push操作
 # 这个工作流程需要执行的任务
 jobs:
   process:
-    name: Test on ${{ matrix.os }}
+    name: Update flutter framework
     # 运行在哪个平台（这里是MacOS）
     runs-on: macos-latest
     # 这个任务的步骤
@@ -25,7 +25,7 @@ jobs:
         run: gem install cocoapods
 
       # 想让我们CI做的事情！
-      - run: cd mixed_dev_flutter_project && flutter build ios-framework —-cocoapods —-output=../MixedDeviOSProject/mixed_dev_flutter_app
+      - run: cd mixed_dev_flutter_project && flutter build ios-framework —-output=../MixedDeviOSProject/mixed_dev_flutter_app
       
       - run: |
          git add .
