@@ -12,7 +12,7 @@
 @end
 
 @implementation ViewController
-//试试   
+//试试   吃测试
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
