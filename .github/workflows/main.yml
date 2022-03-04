@@ -19,10 +19,6 @@ jobs:
           channel: "stable"
           flutter-version: "2.5.1"
       
-      # 执行测试
-      - run: flutter test
-
-
       - run: flutter --version
       
       # 想让我们CI做的事情！
