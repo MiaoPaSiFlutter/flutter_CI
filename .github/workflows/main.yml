@@ -25,7 +25,7 @@ jobs:
         run: gem install cocoapods
 
       # 想让我们CI做的事情！
-      - run: cd mixed_dev_flutter_project && flutter build ios-framework —cocoapods —output=../MixedDeviOSProject/mixed_dev_flutter_app
+      - run: cd mixed_dev_flutter_project && flutter build ios-framework —-cocoapods —-output=../MixedDeviOSProject/mixed_dev_flutter_app
       
       - run: |
          git add .
